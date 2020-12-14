@@ -21,9 +21,10 @@ export class ApiService {
     const headers= new HttpHeaders()
     .set('Access-Control-Allow-Origin', '*')
     .set('Content-Type', 'application/json');
-   var uri = this.apiUrl + '/cost/';
+    var uri = this.apiUrl + '/cost/';
     var url =encodeURI(uri);
     console.log(body);
+    // This is not working correctly... 
     this.http.post(url, body, {'headers':headers})
     .pipe(
       tap((x)=>console.log('got cost',x)),

@@ -5,10 +5,12 @@
     using System.Net.Http;
     using BenefitsAPIs.Model;
     using BenefitsAPIs.Services;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
     [Route("api/[controller]")]
     [ApiController]
+    [AllowAnonymous]
     public class CostController : ControllerBase
     {
         readonly ICostService _costService;
