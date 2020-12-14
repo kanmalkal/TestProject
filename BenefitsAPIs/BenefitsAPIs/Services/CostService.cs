@@ -14,8 +14,8 @@ namespace BenefitsAPIs.Services
         {
             int cost = 0;
 
-            cost = (employee?.FirstName?.Length > 0) ? CheckDiscount(employee?.FirstName) ? Calculate(true) : Calculate(false) : 0;
-            if (employee.dependants != null)
+            cost = (!String.IsNullOrEmpty(employee?.FirstName)) ? CheckDiscount(employee?.FirstName) ? Calculate(true) : Calculate(false) : 0;
+            if (employee?.dependants != null)
             {
                 foreach (Dependant d in employee.dependants)
                 {
@@ -38,7 +38,7 @@ namespace BenefitsAPIs.Services
         }
         private bool CheckDiscount(string firstName)
         {
-            return (firstName.Length > 0)?(firstName?.Substring(0,1).ToUpper() == "A") ? true : false : false;
+            return (!String.IsNullOrEmpty(firstName))?(firstName?.Substring(0,1).ToUpper() == "A") ? true : false : false;
         }
     }
 }
