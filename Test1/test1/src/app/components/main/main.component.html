@@ -1,0 +1,55 @@
+<div class="container-fluid">
+<form [formGroup]="employeeForm" (submit)="submit();">
+    <div class="card bg-gradient-dark text-dark">
+        <div class="row mt-3">
+            <div class="col-3">Name of employee</div>
+            <div class="col-9">
+              <app-employee-name [data]="employee"></app-employee-name>
+           </div>
+           <div clss="col"></div>
+        </div>
+        <div class="row mt-3"></div>
+        <!-- Card for the dependants form array-->
+        <div class="row mt-3 justify-content-md-center" >
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapsedependants" aria-expanded="false" aria-controls="#collapsedependants">
+                    Add Dependants
+                </button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="collapse" id="collapsedependants">
+        <div class="row mt-3 center px-5" >
+            <div class="col" *ngIf="employeeForm.get('dependants')" >
+                <div formArrayName="dependants"
+                *ngFor="let item of employeeForm.get('dependants').controls; let i = index; let last = last">
+                        <div [formGroupName]="i">
+                        <input formControlName="firstName" placeholder="First Name">
+                        <input formControlName="lastName" placeholder="Last Name">
+                        <input formControlName="relationship" placeholder="spouse or child">
+	                    <button (click)="removeDependant();">-</button>
+                        <button (click)="addDependant();" *ngIf="last">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- end - Card for the dependants form array-->
+      </div>
+
+</form>
+</div>
+<div class="container-fluid ">
+    <div class="card p-3 mb-2 bg-gradient-dark text-dark">
+        <div class="row" >
+            <div class="col-md-6">     
+                <div class="row mt-3">
+                    <div class="col"><button mat-raised-button (click)="getCost();">Get Cost</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" *ngIf="totalCost>0">Calculated Costs : {{ totalCost }}</div>
+        </div>
+    </div>
+</div>

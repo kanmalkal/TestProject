@@ -3,3 +3,9 @@
 ################################################################################
 
 /BenefitsAPIs/.vs/BenefitsAPIs
+/BenefitsAPIs/BenefitsApiTests/bin/Debug/netcoreapp3.1
+/BenefitsAPIs/BenefitsApiTests/obj
+/Test1/.vscode
+/BenefitsAPIs/BenefitsAPIs/BenefitsAPIs.csproj.user
+/BenefitsAPIs/BenefitsAPIs/obj
+/BenefitsAPIs/BenefitsAPIs/bin/Debug/netcoreapp3.1
