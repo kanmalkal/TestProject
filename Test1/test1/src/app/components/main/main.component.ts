@@ -25,14 +25,6 @@ export class MainComponent implements OnInit {
     });
   }
 
-  submit():void{
-    console.log("submitted");
-    this.employee.firstName = this.employeeForm.get('firstName')?.value;
-    this.employee.lastName= this.employeeForm.get('lastName')?.value;
-    console.log(this.employee);
-    console.log(this.dependants);
-  }
-
   addDependant():void{
     console.log("add dependants")
     this.dependants= this.employeeForm.get('dependants') as FormArray;
@@ -61,7 +53,7 @@ export class MainComponent implements OnInit {
       this.totalCost = this.costService.getBenefitsCost(this.employee);
     } 
 
-    console.log(this.totalCost);
+    console.log('total benefit cost',this.totalCost);
   }
 }
 

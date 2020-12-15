@@ -1,16 +1,6 @@
-import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { Component, Directive, Pipe } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ControlContainer, FormBuilder, FormGroup, FormGroupDirective,FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatCommonModule } from '@angular/material/core';
-import { MatLabel, MatHint, MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from 'src/app/app.component';
-import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
-import { MainComponent } from '../main/main.component';
-
+import { ControlContainer, FormGroup, FormGroupDirective,ReactiveFormsModule } from '@angular/forms';
+import { MatLabel} from '@angular/material/form-field';
 import { EmployeeNameComponent } from './employee-name.component';
 
 describe('EmployeeNameComponent', () => {

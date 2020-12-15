@@ -4,13 +4,12 @@ import { MatLabel, MatHint } from '@angular/material/form-field';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from 'src/app/app.component';
 import { ApiService } from 'src/app/services/api-service/api.service';
-import { Employee } from '../../model/employee';
 import { EmployeeNameComponent } from '../employee-name/employee-name.component';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { MainComponent } from './main.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('MainComponent', () => {
   let component: MainComponent;

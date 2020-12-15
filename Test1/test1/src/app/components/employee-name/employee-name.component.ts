@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, FormGroupDirective } from '@angular/forms';
 import { Employee } from '../../model/employee';
 
@@ -10,8 +10,6 @@ import { Employee } from '../../model/employee';
 export class EmployeeNameComponent implements OnInit, OnDestroy {
 @Input() data : Employee =new Employee('','');
 @Input() index = 0;
-@ViewChild('firstName', {static: true}) firstName : ElementRef | undefined;
-@ViewChild('lastName', {static: true}) lasttName : ElementRef | undefined;
 
 form: FormGroup = new FormGroup({
   firstName: new FormControl(''),
