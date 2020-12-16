@@ -28,24 +28,24 @@ namespace BenefitsAPIs
         {
             services.AddSingleton<ICostService, CostService>();
            services.AddControllers();
-            //services.AddCors(options => options.AddPolicy("testCorsPolicy", builder =>
-            //{
-            //    builder.AllowAnyOrigin()
-            //           .AllowAnyMethod()
-            //           .AllowAnyHeader();
-            //}));
-
-
-            services.AddCors(options =>
+            services.AddCors(options => options.AddPolicy("testCorsPolicy", builder =>
             {
-                options.AddPolicy("corsPolicy",
-                builder =>
-                {
-                    builder.WithOrigins("http://localhost:4200")
-                                        .AllowAnyHeader()
-                                        .AllowAnyMethod();
-                });
-            });
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
+
+            //services.AddCors(options =>
+            //{
+            //    options.AddPolicy("corsPolicy",
+            //    builder =>
+            //    {
+            //        builder.WithOrigins("http://localhost:4200")
+            //                            .AllowAnyHeader()
+            //                            .AllowAnyMethod();
+            //    });
+            //});
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

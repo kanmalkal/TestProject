@@ -3,6 +3,7 @@
     using System;
     using System.Net;
     using System.Net.Http;
+    using System.Web.Http.Cors;
     using BenefitsAPIs.Model;
     using BenefitsAPIs.Services;
     using Microsoft.AspNetCore.Authorization;
@@ -11,6 +12,7 @@
     [Route("api/[controller]")]
     [ApiController]
     [AllowAnonymous]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CostController : ControllerBase
     {
         readonly ICostService _costService;
